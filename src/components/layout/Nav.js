@@ -1,6 +1,6 @@
 import { NavLink } from 'react-bootstrap';
 
-const activeStyle = 'navlink-active';
+const activeStyle = { color: 'red' };
 
 export default function Nav() {
   return (
