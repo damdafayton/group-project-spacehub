@@ -1,28 +1,36 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Nav from './components/Nav';
+
 import './App.css';
+import * as api from './api';
+
+import { addRocket } from './redux/rockets/rocketsReducer';
 
 function App() {
+  const dispatch = useDispatch();
+  const rockets = useSelector((state) => state.rockets);
+
+  useEffect(async () => {
+    if (rockets.length <= 0) {
+      const apiResponse = await api.rockets();
+      console.log(apiResponse);
+      apiResponse.forEach((object) => {
+        dispatch(() => addRocket({
+          id: object.id,
+          name: object.name,
+          flickrImage: object.flickr_image,
+        }));
+      });
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <div className="App">
+      </div>
+    </>
   );
 }
 
