@@ -17,10 +17,10 @@ export default function Rockets() {
         const apiResponse = await api.rockets();
 
         apiResponse.forEach((object) => {
-          dispatch(() => addRocket({
+          dispatch(addRocket({
             id: object.id,
-            name: object.name,
-            flickrImage: object.flickr_image,
+            name: object.rocket_name,
+            flickrImage: object.flickr_images,
           }));
         });
       })();
@@ -28,6 +28,6 @@ export default function Rockets() {
   }, []);
 
   return (
-    rockets.map((rocket) => <div key={`rocket-${uuidv4()}`}>{rocket}</div>)
+    rockets.map((rocket) => <div key={`rocket-${uuidv4()}`}>{rocket.name}</div>)
   );
 }
