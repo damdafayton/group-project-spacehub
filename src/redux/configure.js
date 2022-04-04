@@ -1,12 +1,18 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 
 // Logger with default options
 import logger from 'redux-logger';
 
 import rocketsReducer from './rockets/rocketsReducer';
 
+const rootReducer = combineReducers(
+  {
+    rockets: rocketsReducer,
+  },
+);
+
 const store = createStore(
-  rocketsReducer,
+  rootReducer,
   applyMiddleware(logger),
 );
 
