@@ -1,19 +1,17 @@
-import { NavLink } from 'react-bootstrap';
-
-// const activeStyle = { color: 'red' };
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   return (
     <nav>
       <NavLink
         to="/"
-      // style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
       >
         Rockets
       </NavLink>
       <NavLink
         to="/mission"
-      // style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
       >
         Missions
       </NavLink>

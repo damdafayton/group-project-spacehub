@@ -6,7 +6,7 @@ function Router() {
   return (
     <Routes>
       <Route exact path="/" element={<Rockets />} />
-      <Route path="/mission" element={<Rockets />} />
+      <Route path="/mission" element={<div>hi</div>} />
     </Routes>
   );
 }
