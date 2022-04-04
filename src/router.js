@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Rockets from './components/rockets/Rockets';
 
-function router() {
-    return (
-        <Router>
-            <Route exact path='/' element={ } />
-            <Route path='/mission' element={ } />
-        </Router>
-    )
+function Router() {
+  return (
+    <Routes>
+      <Route exact path="/" element={<Rockets />} />
+      <Route path="/mission" element={<Rockets />} />
+    </Routes>
+  );
 }
 
-export default router
+export default Router;

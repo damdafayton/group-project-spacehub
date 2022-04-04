@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Nav from './components/Nav';
+import { BrowserRouter } from 'react-router-dom';
+import Nav from './components/layout/Nav';
+import Router from './router';
 
 import './App.css';
 import * as api from './api';
@@ -14,7 +16,8 @@ function App() {
   useEffect(async () => {
     if (rockets.length <= 0) {
       const apiResponse = await api.rockets();
-      console.log(apiResponse);
+      // console.log(apiResponse);
+
       apiResponse.forEach((object) => {
         dispatch(() => addRocket({
           id: object.id,
