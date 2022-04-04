@@ -5,7 +5,7 @@ import Nav from './components/layout/Nav';
 import Router from './router';
 
 import './App.css';
-import * as api from './api';
+import api from './api';
 
 import { addRocket } from './redux/rockets/rocketsReducer';
 
