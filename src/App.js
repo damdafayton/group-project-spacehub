@@ -26,11 +26,10 @@ function App() {
   }, []);
 
   return (
-    <>
+    <BrowserRouter>
       <Nav />
-      <div className="App">
-      </div>
-    </>
+      <Router />
+    </BrowserRouter>
   );
 }
 
