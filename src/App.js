@@ -14,17 +14,19 @@ function App() {
   const rockets = useSelector((state) => state.rockets);
 
   useEffect(() => {
-    if (0 > 1 && rockets) {
-      const apiResponse = api.rockets().then((res) => res);
-      console.log(apiResponse);
+    if (rockets && rockets.length <= 0) {
+      (async () => {
+        const apiResponse = await api.rockets();
+        console.log(apiResponse);
 
-      apiResponse.forEach((object) => {
-        dispatch(() => addRocket({
-          id: object.id,
-          name: object.name,
-          flickrImage: object.flickr_image,
-        }));
-      });
+        apiResponse.forEach((object) => {
+          dispatch(() => addRocket({
+            id: object.id,
+            name: object.name,
+            flickrImage: object.flickr_image,
+          }));
+        });
+      })();
     }
   }, []);
 
