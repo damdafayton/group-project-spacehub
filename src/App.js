@@ -5,7 +5,7 @@ import Nav from './components/layout/Nav';
 import Router from './router';
 
 import './App.css';
-import api from './api';
+import * as api from './api';
 
 import { addRocket } from './redux/rockets/rocketsReducer';
 
@@ -13,10 +13,10 @@ function App() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
 
-  useEffect(async () => {
-    if (rockets.length <= 0) {
-      const apiResponse = await api.rockets();
-      // console.log(apiResponse);
+  useEffect(() => {
+    if (0 > 1 && rockets) {
+      const apiResponse = api.rockets().then((res) => res);
+      console.log(apiResponse);
 
       apiResponse.forEach((object) => {
         dispatch(() => addRocket({
