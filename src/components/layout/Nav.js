@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   return (
-    <nav>
+    <nav className="mb-3">
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
