@@ -12,8 +12,7 @@ export default function MyProfile() {
         {reservedRockets.length
           ? reservedRockets.map((rocket) => (
             <li key={uuidv4()} className="list-group-item">{rocket.name}</li>))
-          : <li>You haven't reserved any rockets yet.</li>
-        }
+          : <li>You haven't reserved any rockets yet.</li>}
       </ul>
     </section>
   );
