@@ -25,10 +25,9 @@ export default function rocketsReducer(state = [], action) {
         ? { ...rocket, reserved: true }
         : rocket));
     case CANCEL_RESERVATION:
-      return state.map(rocket => rocket.id === parseInt(action.payload, 10)
+      return state.map((rocket) => (rocket.id === parseInt(action.payload, 10)
         ? { ...rocket, reserved: false }
-        : rocket
-      )
+        : rocket));
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import * as api from '../../api';
 
-import { addRocket, reserveRocket } from '../../redux/rockets/rocketsReducer';
+import { addRocket, reserveRocket, cancelReservation } from '../../redux/rockets/rocketsReducer';
 
 import styles from './Rockets.module.scss';
 
@@ -15,6 +15,11 @@ export default function Rockets() {
   function reserveButtonHandler(e) {
     const id = e.target.getAttribute('data-rocket-id');
     dispatch(reserveRocket({ id }));
+  }
+
+  function cancelButtonHandler(e) {
+    const id = e.target.getAttribute('data-rocket-id');
+    dispatch(cancelReservation({ id }));
   }
 
   // Fetch Rockets from the api and dispatch into store
@@ -50,16 +55,14 @@ export default function Rockets() {
           <div className="col-12 col-md-9">
             <h2 className="fs-5">{rocket.name}</h2>
             <p>{rocket.description}</p>
-            {/* <button type="button" className="btn btn-primary"></button> */}
             <button
               data-rocket-id={rocket.id}
-              onClick={reserveButtonHandler}
-              className="btn btn-primary"
+              onClick={rocket.reserved ? cancelButtonHandler : reserveButtonHandler}
+              className={rocket.reserved ? 'btn btn-outline-secondary' : 'btn btn-primary'}
               type="button"
             >
-              Reserve Rocket
+              {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
             </button>
-            {' '}
           </div>
         </div>
       ))}
