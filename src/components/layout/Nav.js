@@ -1,20 +1,21 @@
-import { NavLink } from 'react-router-dom';
+import {
+  LogoContainer, LogoImg, LogoText, NavBarContainer, NavLinkContainer, NavLinks,
+} from './nav.style';
+import Logo from '../../icons/planet-1.png';
 
 export default function Nav() {
   return (
-    <nav>
-      <NavLink
-        to="/"
-        className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
-      >
-        Rockets
-      </NavLink>
-      <NavLink
-        to="/mission"
-        className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
-      >
-        Missions
-      </NavLink>
-    </nav>
+    <NavBarContainer>
+      <LogoContainer>
+        <LogoImg src={Logo} />
+        <LogoText>Space Hub</LogoText>
+      </LogoContainer>
+      <NavLinkContainer>
+        <NavLinks to="/">Rocket</NavLinks>
+        {' '}
+        |
+        <NavLinks to="/mission">Mission</NavLinks>
+      </NavLinkContainer>
+    </NavBarContainer>
   );
 }
