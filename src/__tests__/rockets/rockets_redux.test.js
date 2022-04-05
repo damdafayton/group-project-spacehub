@@ -1,4 +1,4 @@
-import rocketsReducer, { addRocket } from '../../redux/rockets/rocketsReducer';
+import rocketsReducer, { addRocket, reserveRocket } from '../../redux/rockets/rocketsReducer';
 import rockets from './_rockets';
 
 test('add rocket action', () => {
@@ -21,7 +21,7 @@ test('add rocket action', () => {
     });
 });
 
-test('rockets reducer', () => {
+test('add rocket dispatch', () => {
   const initialState = [{
     description: 'The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.',
     flickrImages: [
@@ -56,3 +56,31 @@ the reliable and safe transport of satellites and the Dragon spacecraft into orb
     name: 'Falcon 9',
   }]);
 });
+
+test('reserve rocket action', () => {
+  expect(reserveRocket({ id: 3 })).toEqual({ type: 'rockets/reserve', payload: 3 })
+})
+
+test('reserve rocket dispatch', () => {
+  const object = rockets[0]
+  const action = addRocket({
+    id: object.id,
+    name: object.rocket_name,
+    flickrImages: object.flickr_images,
+    description: object.description,
+  })
+  const initialState = rocketsReducer(undefined, action)
+  console.log(initialState)
+
+  expect(rocketsReducer(initialState, reserveRocket({ id: object.id }))).toEqual([{
+    description: 'The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.',
+    flickrImages: [
+      'https://imgur.com/DaCfMsj.jpg',
+      'https://imgur.com/azYafd8.jpg',
+    ],
+    id: 1,
+    name: 'Falcon 1',
+    reserved: true
+  }])
+
+})
