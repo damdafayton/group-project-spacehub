@@ -18,7 +18,7 @@ export default function Rockets() {
     if (rockets && rockets.length <= 0) {
       (async () => {
         const apiResponse = await api.rockets();
-        console.log(apiResponse);
+        // console.log(apiResponse);
         apiResponse.forEach((object) => {
           dispatch(addRocket({
             id: object.id,
@@ -36,7 +36,7 @@ export default function Rockets() {
       className={`${styles.section} mx-sm-5`}
       style={{ gridTemplateRows: '1fr '.repeat(rockets.length) }}
     >
-      {rockets.map((rocket) => (
+      {rockets && rockets.map((rocket) => (
         <div className="row mx-0" key={`rocket-${uuidv4()}`}>
           <img
             alt="rocket"
