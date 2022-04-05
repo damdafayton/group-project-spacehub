@@ -2,16 +2,20 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { v4 as uuidv4 } from 'uuid';
-import { Button } from 'react-bootstrap';
 import * as api from '../../api';
 
-import { addRocket } from '../../redux/rockets/rocketsReducer';
+import { addRocket, reserveRocket } from '../../redux/rockets/rocketsReducer';
 
 import styles from './Rockets.module.scss';
 
 export default function Rockets() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
+
+  function reserveButtonHandler(e) {
+    const id = e.target.getAttribute('data-rocket-id');
+    dispatch(reserveRocket({ id }));
+  }
 
   // Fetch Rockets from the api and dispatch into store
   useEffect(() => {
@@ -47,7 +51,14 @@ export default function Rockets() {
             <h2 className="fs-5">{rocket.name}</h2>
             <p>{rocket.description}</p>
             {/* <button type="button" className="btn btn-primary"></button> */}
-            <Button variant="primary">Reserve Rocket</Button>
+            <button
+              data-rocket-id={rocket.id}
+              onClick={reserveButtonHandler}
+              className="btn btn-primary"
+              type="button"
+            >
+              Reserve Rocket
+            </button>
             {' '}
           </div>
         </div>

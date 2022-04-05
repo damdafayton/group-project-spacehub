@@ -19,7 +19,7 @@ export default function rocketsReducer(state = [], action) {
         description: action.description,
       }];
     case RESERVE_ROCKET:
-      return state.map((rocket) => (rocket.id === action.payload
+      return state.map((rocket) => (rocket.id === parseInt(action.payload, 10)
         ? { ...rocket, reserved: true }
         : rocket));
     default:
