@@ -9,9 +9,11 @@ export default function MyProfile() {
     <section className="mx-5">
       <h2>My Rockets</h2>
       <ul className="list-group">
-        {reservedRockets.map((rocket) => (
-          <li key={uuidv4()} className="list-group-item">{rocket.name}</li>
-        ))}
+        {reservedRockets.length
+          ? reservedRockets.map((rocket) => (
+            <li key={uuidv4()} className="list-group-item">{rocket.name}</li>))
+          : <li>You haven't reserved any rockets yet.</li>
+        }
       </ul>
     </section>
   );
