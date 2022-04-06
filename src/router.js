@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import MyProfile from './components/myprofile/MyProfile';
 import Rockets from './components/rockets/Rockets';
 
 function Router() {
@@ -7,6 +8,7 @@ function Router() {
     <Routes>
       <Route exact path="/" element={<Rockets />} />
       <Route path="/mission" element={<div>hi</div>} />
+      <Route path="/myprofile" element={<MyProfile />} />
     </Routes>
   );
 }
