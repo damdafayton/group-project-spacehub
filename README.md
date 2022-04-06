@@ -1,23 +1,21 @@
-# Math Magicians
+![](./ss-spacehub.png)
+
+# Space Traveler's Hub
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
-- Make simple calculations.
-- Read a random math-related quote.
+> In this task, we worked with the real live data from the SpaceX API. We built a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 
 ## Built With
 
 - HTML, CSS, JS
-- Bootstrap, SCSS, React
+- Bootstrap, SCSS, React, Redux
 
 
 ## Live Demo
 
-- [Live Demo Link](https://damdafayton.github.io/math-magicians/build/)
-- [Heroku Deploy](https://damdafayton-calculator.herokuapp.com/)
-- [Netlify Deploy](https://damdafayton-calculator.netlify.app/)
+- [Live Demo Link](https://damdafayton.github.io/group-project-spacehub/build/)
 
 
 ## Available Scripts

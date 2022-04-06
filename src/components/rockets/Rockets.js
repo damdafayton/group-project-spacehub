@@ -54,7 +54,13 @@ export default function Rockets() {
           />
           <div className="col-12 col-md-9">
             <h2 className="fs-5">{rocket.name}</h2>
-            <p>{rocket.description}</p>
+            <p>
+              {
+                rocket.reserved
+                && <span className="badge bg-success me-2">Reserved</span>
+              }
+              {rocket.description}
+            </p>
             <button
               data-rocket-id={rocket.id}
               onClick={rocket.reserved ? cancelButtonHandler : reserveButtonHandler}

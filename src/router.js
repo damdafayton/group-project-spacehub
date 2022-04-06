@@ -7,7 +7,7 @@ function Router() {
   return (
     <Routes>
       <Route exact path="/" element={<Rockets />} />
-      <Route path="/mission" element={<div>hi</div>} />
+      <Route path="/mission" element={<div className="text-center">UNDER CONSTRUCTION</div>} />
       <Route path="/myprofile" element={<MyProfile />} />
     </Routes>
   );
