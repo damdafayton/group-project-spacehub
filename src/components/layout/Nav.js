@@ -1,10 +1,8 @@
-import {
-  LogoContainer, LogoImg, LogoText, NavBarContainer, NavLinkContainer, NavLinks,
-} from './nav.style';
-import Logo from '../../icons/planet-1.png';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   return (
+<<<<<<< HEAD
     <NavBarContainer>
       <LogoContainer>
         <LogoImg src={Logo} />
@@ -19,5 +17,21 @@ export default function Nav() {
 
       </NavLinkContainer>
     </NavBarContainer>
+=======
+    <nav>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
+      >
+        Rockets
+      </NavLink>
+      <NavLink
+        to="/mission"
+        className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
+      >
+        Missions
+      </NavLink>
+    </nav>
+>>>>>>> parent of 40cc77a... Added mission with redux persist
   );
 }

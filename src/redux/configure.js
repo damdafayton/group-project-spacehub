@@ -1,27 +1,32 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
-import MissionReducer from './mission/missionReducer';
-import rocketsReducer from './rockets/rocketsReducer';
 
+// Logger with default options
+import logger from 'redux-logger';
+
+<<<<<<< HEAD
 const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['mission', 'rocket'],
 };
+=======
+import rocketsReducer from './rockets/rocketsReducer';
+>>>>>>> parent of 40cc77a... Added mission with redux persist
 
-const Reducers = combineReducers(
+const rootReducer = combineReducers(
   {
+<<<<<<< HEAD
     rocket: rocketsReducer,
     mission: MissionReducer,
+=======
+    rockets: rocketsReducer,
+>>>>>>> parent of 40cc77a... Added mission with redux persist
   },
 );
-const rootReducer = persistReducer(persistConfig, Reducers);
+
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk, logger),
+  applyMiddleware(logger),
 );
-const persistor = persistStore(store);
-export default { store, persistor };
+
+export default store;
