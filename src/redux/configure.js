@@ -9,12 +9,12 @@ import rocketsReducer from './rockets/rocketsReducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['mission'],
+  whitelist: ['mission', 'rocket'],
 };
 
 const Reducers = combineReducers(
   {
-    rockets: rocketsReducer,
+    rocket: rocketsReducer,
     mission: MissionReducer,
   },
 );

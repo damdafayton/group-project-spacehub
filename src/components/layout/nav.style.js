@@ -4,9 +4,10 @@ import styled from 'styled-components';
 export const NavBarContainer = styled.nav`
 display: flex;
 justify-content: space-between;
-height: 50px;
-padding: 30px 20px;
+height: 70px;
+padding: 30px 50px;
 background-color: #eee;
+
 `;
 
 export const LogoContainer = styled.div`

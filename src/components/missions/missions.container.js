@@ -1,32 +1,32 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { FetchMissionAsync } from '../../redux/mission/missionActions';
 import Mission from './mission';
-import MissionTable from './mission.style';
 
 function MissionsContainer() {
   const dispatch = useDispatch();
   const {
-    missions, loading, error, joined_mission: joindeMission,
+    missions, loading, error, joined_mission: joinedMission,
   } = useSelector((state) => state.mission);
   useEffect(() => {
     dispatch(FetchMissionAsync());
   }, []);
-  const checkJoined = (id) => joindeMission.find((ids) => ids === id);
+  const checkJoined = (id) => joinedMission.find((ids) => ids === id);
   return (
-    <MissionTable striped bordered hover>
-      <thead>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>Join mission</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
+    <div className="container">
+      <Table className="mt-4" striped bordered hover>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Join mission</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
           loading
             ? (
               <tr>
@@ -55,8 +55,9 @@ function MissionsContainer() {
                 />
               ))
         }
-      </tbody>
-    </MissionTable>
+        </tbody>
+      </Table>
+    </div>
   );
 }
 

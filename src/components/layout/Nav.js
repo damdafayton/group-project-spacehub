@@ -12,9 +12,11 @@ export default function Nav() {
       </LogoContainer>
       <NavLinkContainer>
         <NavLinks to="/">Rocket</NavLinks>
-        {' '}
-        |
+        &nbsp; &nbsp; &nbsp;
         <NavLinks to="/mission">Mission</NavLinks>
+        &nbsp;|&nbsp;
+        <NavLinks to="/profile">Profile</NavLinks>
+
       </NavLinkContainer>
     </NavBarContainer>
   );
