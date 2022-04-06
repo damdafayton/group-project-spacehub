@@ -35,7 +35,6 @@
     },
     "ignorePatterns": [
         "dist/",
-        "build/",
-        "**/__tests__/"
+        "build/"
     ]
 }
