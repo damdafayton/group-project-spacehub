@@ -16,7 +16,7 @@ export default function Rockets() {
   }, []);
   const checkReservation = (id) => reservations.find((ids) => ids === id);
   return (
-    <div className="container">
+    <section id="rockets" className="container">
       <div className="row">
         <div className="col-lg-12">
           {
@@ -38,6 +38,6 @@ export default function Rockets() {
      }
         </div>
       </div>
-    </div>
+    </section>
   );
 }

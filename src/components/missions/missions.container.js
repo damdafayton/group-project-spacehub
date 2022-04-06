@@ -15,7 +15,7 @@ function MissionsContainer() {
   }, []);
   const checkJoined = (id) => joinedMission.find((ids) => ids === id);
   return (
-    <div className="container">
+    <section id="mission" className="container">
       <Table className="mt-4" striped bordered hover>
         <thead>
           <tr>
@@ -57,7 +57,7 @@ function MissionsContainer() {
         }
         </tbody>
       </Table>
-    </div>
+    </section>
   );
 }
 
