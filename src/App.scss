@@ -1,3 +1,22 @@
+* li {
+  list-style: none;
+}
+
+nav {
+  img {
+    width: 50px;
+    float: left;
+  }
+
+  li {
+    margin-left: 1rem;
+  }
+}
+
+.navlink-active {
+  color: red !important;
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +51,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

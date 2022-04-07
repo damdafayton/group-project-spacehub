@@ -1,23 +1,21 @@
-# Math Magicians
+![](./ss-spacehub.png)
+
+# Space Traveler's Hub
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
-- Make simple calculations.
-- Read a random math-related quote.
+> In this task, we worked with the real live data from the SpaceX API. We built a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 
 ## Built With
 
 - HTML, CSS, JS
-- Bootstrap, SCSS, React
+- Bootstrap, SCSS, React, Redux
 
 
 ## Live Demo
 
-- [Live Demo Link](https://damdafayton.github.io/math-magicians/build/)
-- [Heroku Deploy](https://damdafayton-calculator.herokuapp.com/)
-- [Netlify Deploy](https://damdafayton-calculator.netlify.app/)
+- [Live Demo Link](https://damdafayton.github.io/group-project-spacehub/build/)
 
 
 ## Available Scripts
@@ -30,7 +28,7 @@ In the project directory, you can:
 - `cd` into the directory where you want to clone your project,
 - Enter the commands below
 ```
-$ git clone git@github.com:damdafayton/bookstore.git
+$ git clone git@github.com:damdafayton/group-project-spacehub.git
 $ npm install
 $ npm start
 ````
@@ -75,6 +73,11 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 - [Github](https://github.com/damdafayton)
 - [LinkedIn](https://linkedin.com/in/damdafayton)
+
+👤 **Dagic-zewdu**
+
+- [Github](https://github.com/Dagic-zewdu)
+- [LinkedIn](https://www.linkedin.com/in/dagmawi-zewdu-21b835215/)
 
 
 ## 🤝 Contributing
