@@ -28,7 +28,7 @@ In the project directory, you can:
 - `cd` into the directory where you want to clone your project,
 - Enter the commands below
 ```
-$ git clone git@github.com:damdafayton/bookstore.git
+$ git clone git@github.com:damdafayton/group-project-spacehub.git
 $ npm install
 $ npm start
 ````
