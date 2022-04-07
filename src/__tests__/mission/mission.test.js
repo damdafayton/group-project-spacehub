@@ -5,7 +5,6 @@ import renderWthRedux from '../../utils/testHelpers';
 describe('Mission components should render without crashing', () => {
    it('should MissionContainer render ', () => {
            let {getByTestId}  =renderWthRedux(<MissionsContainer/>)
-  expect(getByTestId("table-body"))
    });
    it("Mission should render without crashing",()=>{
            let {getByTestId}  =renderWthRedux(<Mission
