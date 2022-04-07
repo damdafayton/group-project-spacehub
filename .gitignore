@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# production
-/build
-
 # misc
 .DS_Store
 .env.local
@@ -23,3 +20,8 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json 
 yarn.lock
+
+.env
+webpack.config.js
+webpack.config.js.lnk
+.notes.txt
