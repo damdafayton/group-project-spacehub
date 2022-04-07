@@ -4,7 +4,7 @@ import Rockets from '../../components/rockets/Rockets';
 
 import rockets from './_rockets';
 
-// replace api property with redux prop`erty name
+// replace api property with redux property name
 const mockRockets = rockets.map((rocket) => ({ ...rocket, flickrImages: rocket.flickr_images, name: rocket.rocket_name }));
 
 jest.mock('react-redux', () => ({
