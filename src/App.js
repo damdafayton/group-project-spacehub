@@ -4,9 +4,11 @@ import Router from './router';
 
 import './App.scss';
 
+const githubBasename = process.env.REACT_APP_BASENAME || '/';
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={githubBasename}>
       <Nav />
       <Router />
     </BrowserRouter>
