@@ -8,7 +8,7 @@ function Router() {
   return (
     <Routes>
       <Route exact path="/" element={<Rockets />} />
-      <Route path="/mission" element={<MissionsContainer />} />
+      {/* <Route path="/mission" element={<MissionsContainer />} /> */}
       <Route path="/myprofile" element={<MyProfile />} />
     </Routes>
   );

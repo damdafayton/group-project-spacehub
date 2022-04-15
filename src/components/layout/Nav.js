@@ -17,14 +17,14 @@ export default function Nav() {
             Rockets
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             to="/mission"
             className={({ isActive }) => (isActive ? 'navlink-active' : undefined)}
           >
             Missions
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink
             to="/myprofile"
