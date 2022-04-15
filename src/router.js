@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MissionsContainer from './components/missions/missionContainer';
+// import MissionsContainer from './components/missions/missionContainer';
 import MyProfile from './components/myprofile/MyProfile';
 import Rockets from './components/rockets/Rockets';
 
