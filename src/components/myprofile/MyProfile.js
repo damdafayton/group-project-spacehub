@@ -19,7 +19,7 @@ export default function MyProfile() {
           </ul>
         </div>
         <div className="col-lg-6">
-          <h2 className="fs-4"`>Joined Missions</h2>
+          <h2 className="fs-4">Joined Missions</h2>
           <ul className="list-group">
             {joinedMission.length
               ? joinedMission.map((id) => {

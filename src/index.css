@@ -16,6 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul{
+  margin-bottom: 0 !important;
+}
+
 code {
   font-family:
     source-code-pro,
@@ -24,4 +28,8 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.nav-li{
+  white-space: nowrap;
 }
